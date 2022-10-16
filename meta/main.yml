@@ -1,9 +1,10 @@
+---
 galaxy_info:
   author: Abdullah Barrak
   description: Ansible role to install and configure plik file server.
   issue_tracker_url: https://github.com/abarrak/plik-ansible-role/issues
   license: MIT
-  
+
   min_ansible_version: 2.6
 
   platforms:
@@ -40,5 +41,5 @@ galaxy_info:
     - ansible
     - tmp-file-server
     - files
-    
+
 dependencies: []

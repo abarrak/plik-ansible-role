@@ -1,5 +1,12 @@
 ---
 - hosts: localhost
-  remote_user: root
-  roles:
-    - plik
+  connection: local
+  vars_files:
+    - ../defaults/main.yml
+  tasks:
+    - name: test role tasks
+      ansible.builtin.include_tasks: ../tasks/main.yml
+      vars:
+        install_dest: "."
+  handlers:
+    - import_tasks: ../handlers/main.yml
