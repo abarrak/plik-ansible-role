@@ -15,20 +15,6 @@ Role Variables
 
 The role contains default varibles in `defaults/main.yml`, and should be overriden as convenient.
 
-For plik configuration, the common parameters are available [in vars as well](https://github.com/abarrak/plik-ansible-role/blob/main/defaults/main.yml). 
-
-In case further customization is needed (e.g. add different backends), the config file `plik.toml` can be pass as block to the play:
-
-    toml_config: |
-      GoogleApiClientID   = ""
-      GoogleApiSecret     = ""
-      GoogleValidDomains  = []
-
-      DataBackend = "gcs"
-        [DataBackendConfig]
-        Bucket = "MyAwesomeBucket"
-        Folder = "plik"
-
     
 Dependencies
 ------------
@@ -49,6 +35,20 @@ Include it to run the setup tasks:
         name: abarrak.plik_role
       vars:
         release_version: "1.3.6"
+
+For plik configuration, the common parameters are available [in vars as well](https://github.com/abarrak/plik-ansible-role/blob/main/defaults/main.yml). 
+
+For further customization (e.g. add different backends), `plik.toml` can be pass as varible block:
+
+    toml_config: |
+      GoogleApiClientID   = ""
+      GoogleApiSecret     = ""
+      GoogleValidDomains  = []
+
+      DataBackend = "gcs"
+        [DataBackendConfig]
+        Bucket = "MyAwesomeBucket"
+        Folder = "plik"
 
 License
 -------
