@@ -1,5 +1,7 @@
 Plik Ansible Role
 =================
+[![CI](https://github.com/abarrak/plik-ansible-role/actions/workflows/ci.yml/badge.svg)](https://github.com/abarrak/plik-ansible-role/actions/workflows/ci.yml)
+[![Release](https://github.com/abarrak/plik-ansible-role/actions/workflows/release.yml/badge.svg)](https://github.com/abarrak/plik-ansible-role/actions/workflows/release.yml)
 
 This is an ansible role to install and configure Plik.
 
