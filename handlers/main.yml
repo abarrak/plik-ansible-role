@@ -1,1 +1,5 @@
 ---
+- name: Start Plik server
+  ansible.builtin.shell:
+    chdir: "{{ install_dest }}/server"
+    cmd: "./plikd"

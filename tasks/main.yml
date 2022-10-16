@@ -1,2 +1,24 @@
 ---
+- name: Setting download paths
+  ansible.builtin.set_fact:
+    download_url: "{{ release_url }}/{{ release_version }}"
+    download_file: "plik-linux-{{ architecture }}.tar.gz"
+    
+- name: Fetch software package
+  ansible.buildin.get_url:
+    url: "{{ download_url }}/{{ download_file }}"
+    dest: "{{ install_dest }}"
+    mode: "644"
+    checksum: "sha256:{{ download_url }}/sha256sum.txt"
 
+- name: Untar package
+  ansible.builtin.unarchive:
+    scr: "{{ install_dest }}/{{ download_file }}"
+    dest: "./"
+    
+- name: Copy configuration file
+  ansible.builtin.template:
+    scr: "templates/plikd.cfg.j2"
+    dest: "{{ install_dest }}/server/"
+  notify:
+    - Start Plik server

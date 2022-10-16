@@ -1,6 +1,7 @@
 ---
 ## Role options.
 #
+release_url: https://github.com/root-gg/plik/releases/download
 release_version: "1.3.6"
 architecture: amd64
 
@@ -16,7 +17,7 @@ files_backend_directory: "files"
 ssl_enabled: fasle
 ssl_cert: plik.crt
 ssl_key: plik.key
-web_ui: true
+disable_web_ui: false
 web_security: true
 upload_whitelist: []
 authentication: default
