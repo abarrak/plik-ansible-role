@@ -1,0 +1,44 @@
+galaxy_info:
+  author: Abdullah Barrak
+  description: Ansible role to install and configure plik file server.
+  issue_tracker_url: https://github.com/abarrak/plik-ansible-role/issues
+  license: MIT
+  
+  min_ansible_version: 2.6
+
+  platforms:
+    - name: EL
+      versions:
+        - 7
+        - 8
+        - 9
+    - name: Fedora
+      versions:
+        - 30
+        - 31
+        - 32
+        - 33
+        - 34
+        - 35
+        - 36
+    - name: Ubuntu
+      versions:
+        - xenial
+        - bionic
+        - focal
+        - jammy
+    - name: Debian
+      versions:
+        - wheezy
+        - jessie
+        - stretch
+        - buster
+        - bullseye
+
+  galaxy_tags:
+    - plik
+    - ansible
+    - tmp-file-server
+    - files
+    
+dependencies: []
