@@ -28,13 +28,13 @@ Example Playbook
 
 Install the role:
 
-    ansible-galaxy install abarrak.plik_role
+    ansible-galaxy install abarrak.plik_ansible_role
 
 Include it to run the setup tasks:
 
     - hosts: plik-server
       import_role:
-        name: abarrak.plik_role
+        name: abarrak.plik_ansible_role
       vars:
         release_version: "1.3.6"
 
