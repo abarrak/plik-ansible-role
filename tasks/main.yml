@@ -18,7 +18,7 @@
     url: "{{ download_url }}/{{ download_file }}"
     dest: "{{ install_dest }}/"
     mode: "644"
-    checksum: "sha256:{{ download_url }}/sha256sum.txt"
+    # checksum: "sha256:{{ download_url }}/sha256sum.txt"
   when: package_exists.rc != 0
 
 - name: Untar package
@@ -31,5 +31,13 @@
   ansible.builtin.template:
     src: templates/plikd.cfg.j2
     dest: "{{ install_dest }}/{{ download_file_base }}/server"
+  notify:
+    - Start Plik server
+
+- name: Apply custom configuration block
+  ansible.builtin.copy:
+    content: "{{ toml_config }}"
+    dest: "{{ install_dest }}/{{ download_file_base }}/server/plikd.cfg.j2"
+  when: toml_config is defined and (toml_config | length > 0)
   notify:
     - Start Plik server
