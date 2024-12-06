@@ -40,7 +40,7 @@ Include it to run the setup tasks:
 
 For plik configuration, the common parameters are available [in vars as well](https://github.com/abarrak/plik-ansible-role/blob/main/defaults/main.yml). 
 
-For further customization (e.g. add different backends), `plikd.cfg` can be pass as varible block:
+For further customization _(e.g. add different backends)_, `plikd.cfg` can be pass as varible block:
 
     toml_config: |
       GoogleApiClientID   = ""
